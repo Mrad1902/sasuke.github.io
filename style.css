@@ -1,0 +1,443 @@
+:root{
+    --main-color:rgb(245, 177, 188);
+
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.main-title{
+    align-items: center;
+ 
+justify-content: center;  
+ margin: 50px 50px;
+    background-color: #f1b5bf85;
+}
+.main-title  h1 {
+    margin: 5px auto;
+    width: fit-content;
+position: relative;
+padding: 10px;
+}
+.main-title  h1::before {
+ content: "";
+ position: absolute;
+ bottom: -5px;
+ left: 10px;
+ height: 3px;
+ width: calc(100% - 20px);
+ background-color: rgb(61, 61, 60);
+    }
+header{
+    background-color: white;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    box-shadow: 0 2px 15px black;
+}
+
+
+    
+
+span{
+    color: var(--main-color);
+}
+.container{
+   padding-left: 15px;
+   padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+header .search{
+    overflow: hidden;
+    position: absolute;
+    top: calc(100% + 20px);
+    background-color: rgb(255, 255, 255);
+    right: 0;
+   opacity: 0;
+   
+  height: 70px;
+   
+    border-radius: 25px;
+    width: 250px;
+    transition: all 0.5s;
+    
+    
+}
+.search input{
+    margin: 20px 30px;
+    
+    width: 60%;
+    border: 2px solid var(--main-color);
+    border-radius: 25px;
+}
+.icon .shop {
+    position: relative;
+}
+.icon .shop::before{
+    opacity: 70%;
+   content: "";
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   top: -12px;
+   right: -12px;
+   background-color:var(--main-color);
+   color: black;
+   font-size: 10px;
+   text-align: center;
+   z-index: -1;
+
+
+}
+
+.icon a{
+    color: black;
+    margin-left: 20px;
+}
+.menu a{ text-decoration: none;
+    color: black;
+  padding: 0 10px;
+  margin: 0 10px;
+    position: relative;
+    transition: all 0.5s;
+    
+
+}
+
+a:hover{
+    color: pink;
+}
+
+.container .menu{
+    transition: all 0.5s;
+    display: flex;
+}
+header .container{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.h{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media(min-width:768px){
+    .container{
+        width: 750px;
+    }
+   .menu  a::before{
+        content: "";
+        position: absolute;
+        top: -23px;
+        left: 0px;
+        height: 2px;
+        background-color: pink;
+        width: 0;
+        transition: all  0.5s;
+    }
+    a:hover::before{
+        width: 100%;
+    }
+}
+@media(max-width:768px){
+    .logo h2 {
+        font-size: 30px;
+    }
+    .h{
+        display: block;
+    }
+   .home img{
+    display: none;
+   }
+
+   .container .menu{
+    position: absolute;
+    top: 120%;
+    left: 0;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(255, 250, 250);
+   height: 0;
+   overflow: hidden;
+  
+    }
+   .container .active{
+       height: 200px; 
+       z-index: 100;   
+   }
+   .menu a{
+  
+    
+    margin-bottom: 20px;
+   }
+   .menu a::before{
+    content: "";
+   }
+}
+
+@media(min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+
+@media(min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+header .show{
+   
+    z-index: 100;
+opacity: 100%;
+}
+
+
+
+
+
+
+/*start cover*/
+.cover {
+    background-image: url(back.jpg);
+    background-size: cover;
+position: relative;
+    
+  
+    height:calc(100vh - 100px);
+  
+}
+.cover .contenu{
+    background-color: #ffc0cb85;
+
+    position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 40%;
+  
+     padding: 20px 80px;
+  
+   
+
+}
+
+.cover .contenu h1{
+    color: white;
+    font-size: 50px;
+    margin-left: 30px;
+}
+.cover .contenu p{
+    color: #141414;
+    line-height: 3px;
+    
+}
+.cover .contenu button{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    margin-top: 30px; 
+}
+
+/*end cover*/
+
+/*start product*/
+.products .container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap:40px;
+
+}
+
+.products .box {
+    transition: all 0.3s;
+
+    position: relative;
+    
+    overflow: hidden;
+}
+.image{
+    height: 100%;
+}
+.products .box:hover .info{
+    bottom: 0;
+}
+.products .box:hover img{
+   transform: rotate(10deg) scale(1.2);
+}
+.products .box:hover {
+    border: 3px solid var(--main-color);
+   box-shadow: 0 3px 15px rgb(65, 64, 64);
+}
+.products .box .info{
+  
+align-items: center;
+   display: flex;
+   flex-direction: column;
+    position: absolute;
+    width: 100%;
+    bottom: -100%;
+    background-color: #a77b7b5c;
+    border-top: 2px solid black;
+    padding: 5px 5px;
+  transition: all 0.5s;
+}
+.products .box img{
+    transition: all 0.5s;
+    max-width: 100%;
+  
+}
+.products .box h4 {
+   
+    font-size: 30px;
+    color: black;
+    margin-bottom: 0;
+}
+.products .box p {
+color: white;
+    
+}
+.products .box button {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 150px;
+    border:none;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+   
+}
+.products .box button:hover{
+    padding: 9px;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+@media(max-width:768px){
+    .products .box{
+        width: 80%;
+        margin: auto;
+    }
+}
+/*end product*/
+
+/*start about*/
+.about .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.about .taswira{
+    position: relative;
+    flex-basis: 45%;
+
+}
+
+
+.about .taswira  h1 {
+    text-align: center;
+    position: absolute;
+   left: 0;
+   font-size: 30px;
+    top: 50%;
+    width: 100%;
+ transform: translateY(-50%);
+background: white;
+ mix-blend-mode: screen;
+}
+
+.about .taswira{
+    margin-bottom: 20px;
+  
+    overflow: hidden;
+}
+
+.about .taswira img{
+max-width: 100%; 
+
+transition: all 0.5s;
+height: 100%;
+
+
+}
+.about .taswira:hover img{
+   transform: scale(1.2);
+    
+    
+    }
+.about .why {
+    flex-basis: 45%;
+
+}
+.about .why h3{
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: #3c3a3a;
+    margin-top: 0;
+}
+
+.about .why button{
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+ 
+    width: 130px;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+.about .why button:hover{
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+
+@media(max-width:991px){
+    .about .taswira{
+          
+            flex-basis: 100%;
+        
+        }
+        .about .why {
+            flex-basis: 100%;
+        
+        }
+      
+    }
+    @media(max-width:767px){
+        .about .taswira{
+              
+                flex-basis: 80%;
+               margin:30px auto;
+            
+            }
+           .about .why {
+            flex-basis: 100%;
+        
+        }
+      
+          
+        }
+/*end about*/
